@@ -4,10 +4,10 @@ import { Injectable } from '@nestjs/common';
 @Injectable()
 export class AppService {
   
-  AWS_S3_BUCKET_NAME = 'apkfolder';
+  AWS_S3_BUCKET_NAME = process.env.S3_BUCKET;
   s3 = new AWS.S3({
-    accessKeyId: 'AKIAJEKXGZYVNKC5UERA',
-    secretAccessKey: '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'
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY
   })
   getHello(): string {
     return 'Hello World!';
