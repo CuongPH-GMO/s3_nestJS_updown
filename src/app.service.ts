@@ -33,7 +33,7 @@ export class AppService {
   }
 
   public download(key) {
-    const bucketParams = {Key: key, Bucket: AWS_S3_BUCKET_NAME};
-    return s3.getObject(bucketParams);
+    const bucketParams = {Key: key, Bucket: this.AWS_S3_BUCKET_NAME};
+    return this.s3.getObject(bucketParams);
   }
 }
